@@ -1,42 +1,32 @@
 /* =========================================================
-   The Mindset — linktree
-   FASE 1: andamiaje. El diseño final llega en la fase 2.
+   MNDST · The Mindset — linktree
 
-   Para retematizar el sitio completo basta con cambiar
-   las variables de :root. No hay colores sueltos abajo.
+   Paleta del cliente:
+     carbón #222831 · turquesa #00ADB5 · verde #00AD85
 
-   El acento difiere del de Julian solo para distinguir los
-   dos sitios durante las pruebas. La identidad real de cada
-   marca se define en la fase 2, con logos y referentes.
+   El logo emite luz sobre fondo oscuro. La página repite ese
+   gesto una sola vez: un halo detrás del isotipo. Nada más
+   brilla, para que el logo siga siendo lo que brilla.
    ========================================================= */
 
 :root {
-  /* Color */
-  --color-fondo: #0b0f14;
-  --color-superficie: #151b23;
-  --color-superficie-hover: #1e2630;
-  --color-borde: #28313d;
-  --color-texto: #f2f5f8;
-  --color-texto-suave: #98a4b3;
-  --color-acento: #4da3ff;
-  --color-acento-texto: #06131f;
+  --carbon: #222831;
+  --carbon-hondo: #1A1F26;
+  --superficie: #2B323C;
+  --linea: #39414D;
+  --turquesa: #00ADB5;
+  --verde: #00AD85;
+  --texto: #EEF2F4;
+  --texto-suave: #9AA6B2;
 
-  /* Tipografía */
-  --fuente-cuerpo: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --fuente-titulo: var(--fuente-cuerpo);
+  --display: "Sora", system-ui, sans-serif;
+  --cuerpo: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Forma y ritmo */
-  --radio: 14px;
-  --radio-boton: 12px;
-  --ancho-max: 480px;
-  --espacio: 12px;
+  --ancho: 440px;
+  --gap: 10px;
 }
 
-/* ---------- Reset mínimo ---------- */
-
-*,
-*::before,
-*::after { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: border-box; }
 
 html { -webkit-text-size-adjust: 100%; }
 
@@ -44,57 +34,114 @@ body {
   margin: 0;
   min-height: 100dvh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 40px 20px;
 
-  font-family: var(--fuente-cuerpo);
-  color: var(--color-texto);
-  background: var(--color-fondo);
+  font-family: var(--cuerpo);
+  color: var(--texto);
+  background: var(--carbon-hondo);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
 img { max-width: 100%; display: block; }
 
-/* ---------- Contenedor ---------- */
-
-.tarjeta {
+.pagina {
   width: 100%;
-  max-width: var(--ancho-max);
+  max-width: var(--ancho);
+  padding: 44px 20px 56px;
 }
 
-/* ---------- Perfil ---------- */
+/* ---------- Hero ----------
+   El halo usa los dos colores de marca, no un brillo genérico. */
 
-.perfil {
-  text-align: center;
-  margin-bottom: 28px;
+.hero { text-align: center; }
+
+.hero__marca {
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
 }
 
-.perfil__avatar {
-  width: 112px;
-  height: 112px;
+.hero__marca::before {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
   border-radius: 50%;
-  object-fit: cover;
-  margin: 0 auto 16px;
-  border: 2px solid var(--color-borde);
-  background: var(--color-superficie);
+  background: radial-gradient(circle,
+    color-mix(in srgb, var(--turquesa) 15%, transparent) 0%,
+    transparent 68%);
+  filter: blur(8px);
 }
 
-.perfil__nombre {
-  font-family: var(--fuente-titulo);
-  font-size: 1.5rem;
+/* El logo viene sobre fondo negro, no recortado. En modo
+   "screen" el negro se disuelve contra el fondo oscuro y
+   solo queda el trazo, que ya trae su propio brillo. */
+.hero__marca img {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  mix-blend-mode: screen;
+}
+
+.hero__nombre {
+  font-family: var(--display);
+  font-size: clamp(2.5rem, 13vw, 3.2rem);
   font-weight: 800;
-  letter-spacing: -0.02em;
-  margin: 0 0 6px;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  margin: 0;
 }
 
-.perfil__bio {
-  font-size: 0.95rem;
-  color: var(--color-texto-suave);
-  margin: 0 auto;
-  max-width: 32ch;
+.hero__sub {
+  font-family: var(--display);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  margin: 9px 0 0;
+  padding-left: 0.42em;
+}
+
+/* El lema del logo, con el mismo quiebre de color: la primera
+   mitad en claro, la segunda en turquesa. */
+.hero__lema {
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  color: var(--texto-suave);
+  margin: 18px 0 0;
   text-wrap: balance;
+}
+
+.hero__lema span { color: var(--turquesa); }
+
+/* ---------- Redes ---------- */
+
+.redes {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 24px 0 28px;
+}
+
+.red {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: var(--texto-suave);
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.red svg { width: 20px; height: 20px; }
+
+.red:hover {
+  background: var(--superficie);
+  color: var(--turquesa);
 }
 
 /* ---------- Botones ---------- */
@@ -102,99 +149,149 @@ img { max-width: 100%; display: block; }
 .enlaces {
   display: flex;
   flex-direction: column;
-  gap: var(--espacio);
+  gap: var(--gap);
 }
 
 .boton {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 16px 18px;
+  gap: 10px;
+  padding: 15px 20px;
 
-  background: var(--color-superficie);
-  border: 1px solid var(--color-borde);
-  border-radius: var(--radio-boton);
+  background: var(--superficie);
+  border: 1px solid var(--linea);
+  border-radius: 999px;
 
-  color: inherit;
+  color: var(--texto);
   text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 0.925rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
 
-  transition: background-color 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
+
+.boton__texto { flex: 1; text-align: left; }
+
+.boton__flecha {
+  flex: 0 0 16px;
+  height: 16px;
+  opacity: 0.4;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.boton__flecha svg { width: 16px; height: 16px; display: block; }
 
 .boton:hover {
-  background: var(--color-superficie-hover);
-  border-color: color-mix(in srgb, var(--color-acento) 40%, var(--color-borde));
+  border-color: var(--turquesa);
+  background: color-mix(in srgb, var(--turquesa) 12%, var(--superficie));
 }
 
-.boton:active { transform: scale(0.985); }
-
-.boton__icono {
-  flex: 0 0 20px;
-  height: 20px;
-  color: var(--color-texto-suave);
+.boton:hover .boton__flecha {
+  opacity: 1;
+  transform: translate(2px, -2px);
 }
 
-.boton__icono svg { width: 20px; height: 20px; display: block; }
+.boton:active { transform: scale(0.99); }
 
-.boton__texto { flex: 1; }
-
-/* Botón destacado: la acción que más queremos que ocurra */
-.boton--primario {
-  background: var(--color-acento);
-  border-color: var(--color-acento);
-  color: var(--color-acento-texto);
+/* El servicio VIP es el único con el degradado de marca. */
+.boton--fuerte {
+  background: linear-gradient(100deg, var(--turquesa), var(--verde));
+  border-color: transparent;
+  color: #06222B;
+  font-weight: 600;
 }
 
-.boton--primario:hover {
-  background: color-mix(in srgb, var(--color-acento) 88%, white);
-  border-color: color-mix(in srgb, var(--color-acento) 88%, white);
+.boton--fuerte:hover {
+  background: linear-gradient(100deg, var(--verde), var(--turquesa));
+  border-color: transparent;
 }
 
-.boton--primario .boton__icono { color: inherit; }
+/* ---------- Curso con dos versiones ---------- */
 
-/* ---------- Redes ---------- */
-
-.redes {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 24px;
+.grupo {
+  border: 1px solid var(--linea);
+  border-radius: 22px;
+  padding: 16px 14px 14px;
+  background: color-mix(in srgb, var(--superficie) 55%, transparent);
 }
 
-.red {
+.grupo__eyebrow {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--turquesa);
+  margin: 0 0 7px;
+  padding: 0 6px;
+}
+
+.grupo__titulo {
+  font-family: var(--cuerpo);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 12px;
+  padding: 0 6px;
+  color: var(--texto);
+  text-wrap: balance;
+}
+
+.grupo__opciones {
   display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  color: var(--color-texto-suave);
-  transition: color 0.18s ease, background-color 0.18s ease;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
 }
 
-.red svg { width: 22px; height: 22px; }
+.boton--mitad {
+  padding: 12px 16px;
+  justify-content: center;
+  font-size: 0.875rem;
+}
 
-.red:hover {
-  color: var(--color-texto);
-  background: var(--color-superficie);
+.boton--mitad .boton__texto { text-align: center; flex: 0 1 auto; }
+
+/* ---------- Etiqueta de oferta ---------- */
+
+.etiqueta {
+  flex: 0 0 auto;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--verde);
+  color: #05231C;
+  white-space: nowrap;
+}
+
+/* ---------- Enlaces sin destino todavía ---------- */
+
+.boton[data-pendiente],
+.red[data-pendiente] {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: default;
 }
 
 /* ---------- Pie ---------- */
 
 .pie {
-  margin-top: 28px;
+  margin-top: 30px;
   text-align: center;
-  font-size: 0.78rem;
-  color: var(--color-texto-suave);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
 }
 
 .pie p { margin: 0; }
 
-/* ---------- Accesibilidad ---------- */
+/* ---------- Base de calidad ---------- */
 
 :focus-visible {
-  outline: 2px solid var(--color-acento);
+  outline: 2px solid var(--turquesa);
   outline-offset: 3px;
 }
 
