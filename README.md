@@ -32,24 +32,22 @@ Ninguno de los archivos entregados traía el isotipo recortado: `fondoblanco.PNG
 
 **Si aparece el vector original (SVG o AI), vale la pena cambiarlo:** el PNG pesa 213 KB de los 224 KB del sitio. En SVG serían ~2 KB, y el `mix-blend-mode` dejaría de ser necesario.
 
-## FALTA: 2 enlaces sin destino
-
-Están visualmente atenuados y **no son clicables**. Buscar `PENDIENTE` en `index.html`:
-
-- [ ] `#PENDIENTE_HOTMART_MUJERES` → checkout de Hotmart, versión mujeres
-- [ ] `#PENDIENTE_HOTMART_HOMBRES` → checkout de Hotmart, versión hombres
-
-Al poner la URL real, quitar también el atributo `data-pendiente` del mismo elemento — es lo que lo mantiene desactivado.
-
 ## Enlaces que ya funcionan
 
 | Botón | Destino |
 |---|---|
+| Reprograma tu cerebro — Mujeres | pay.hotmart.com/B106990362O (40% fundadores) |
+| Reprograma tu cerebro — Hombres | pay.hotmart.com/B106989870G (40% fundadores) |
 | Training Athletic Club | dash.fitmewise.com (46% OFF) |
 | Servicio VIP trimestral | dash.fitmewise.com |
 | Julian Fitrainer | julianfitrainer.com |
 | Instagram | @themindst |
 | TikTok | @themnset |
+
+
+## Oferta de fundadores
+
+Los dos enlaces de Hotmart apuntan hoy a la oferta de **primera generación, 40% fundadores** (parámetro `?off=` en la URL). Cuando esa tanda cierre hay que reemplazarlos por los enlaces a precio completo y quitar la etiqueta `40% fundadores` del bloque `.grupo__cabecera` en `index.html`.
 
 ## Pendiente menor
 
