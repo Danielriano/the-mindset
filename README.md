@@ -32,14 +32,12 @@ Ninguno de los archivos entregados traía el isotipo recortado: `fondoblanco.PNG
 
 **Si aparece el vector original (SVG o AI), vale la pena cambiarlo:** el PNG pesa 213 KB de los 224 KB del sitio. En SVG serían ~2 KB, y el `mix-blend-mode` dejaría de ser necesario.
 
-## FALTA: 4 enlaces sin destino
+## FALTA: 2 enlaces sin destino
 
 Están visualmente atenuados y **no son clicables**. Buscar `PENDIENTE` en `index.html`:
 
 - [ ] `#PENDIENTE_HOTMART_MUJERES` → checkout de Hotmart, versión mujeres
 - [ ] `#PENDIENTE_HOTMART_HOMBRES` → checkout de Hotmart, versión hombres
-- [ ] `#PENDIENTE_INSTAGRAM` → Instagram de MNDST
-- [ ] `#PENDIENTE_TIKTOK` → TikTok de MNDST
 
 Al poner la URL real, quitar también el atributo `data-pendiente` del mismo elemento — es lo que lo mantiene desactivado.
 
@@ -50,6 +48,8 @@ Al poner la URL real, quitar también el atributo `data-pendiente` del mismo ele
 | Training Athletic Club | dash.fitmewise.com (46% OFF) |
 | Servicio VIP trimestral | dash.fitmewise.com |
 | Julian Fitrainer | julianfitrainer.com |
+| Instagram | @themindst |
+| TikTok | @themnset |
 
 ## Pendiente menor
 
