@@ -38,7 +38,7 @@ Ninguno de los archivos entregados traía el isotipo recortado: `fondoblanco.PNG
 |---|---|
 | Reprograma tu cerebro — Mujeres | pay.hotmart.com/B106990362O (40% fundadores) |
 | Reprograma tu cerebro — Hombres | pay.hotmart.com/B106989870G (40% fundadores) |
-| Training Athletic Club | dash.fitmewise.com (46% OFF) |
+| Training Athletic Club | wa.me/573245505232 con mensaje ya escrito (46% OFF) |
 | Servicio VIP trimestral | dash.fitmewise.com |
 | Julian Fitrainer | julianfitrainer.com |
 | Instagram | @themindst |
