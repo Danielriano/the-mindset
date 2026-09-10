@@ -40,6 +40,7 @@ Ninguno de los archivos entregados traía el isotipo recortado: `fondoblanco.PNG
 | Reprograma tu cerebro — Hombres | pay.hotmart.com/B106989870G (40% fundadores) |
 | Training Athletic Club | wa.me/573245505232 con mensaje ya escrito (46% OFF) |
 | Servicio VIP trimestral | dash.fitmewise.com |
+| Plan Mensual | dash.fitmewise.com (registro `…-4838`) |
 | Julian Fitrainer | julianfitrainer.com |
 | Instagram | @themindst |
 | TikTok | @themnset |
